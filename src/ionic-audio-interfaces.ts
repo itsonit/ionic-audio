@@ -15,6 +15,7 @@ export interface IAudioProvider {
   play(index: number);
   pause(index?: number);
   stop(index?: number);
+  reset();
 } 
 
 /**

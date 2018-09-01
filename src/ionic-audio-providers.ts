@@ -103,6 +103,17 @@ export abstract class AudioProvider implements IAudioProvider {
   };
 
   /**
+   * Reset all loaded file for working reintialisation of components.
+   * 
+   * @see: https://github.com/arielfaur/ionic-audio/issues/185
+   * @see: https://github.com/arielfaur/ionic-audio/issues/195
+   * 
+   */
+  reset() {
+    AudioProvider.tracks = [];
+  }
+
+  /**
    * Gets an array of tracks managed by this provider
    * 
    * @property tracks
