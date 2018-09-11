@@ -10,9 +10,9 @@ $ionic-audio-thumb-shadow:  (2.2px 2.2px 8.9px #333333, 0px 0px 2.2px #404040) !
 $ionic-audio-thumb-border:  1px solid #fff;
 $ionic-audio-thumb-radius:  100%;
 
-$ionic-audio-track-height:  3px !default;
+$ionic-audio-track-height:  8px !default;
 $ionic-audio-track-margin:  $ionic-audio-thumb-height/2 !default;
-$ionic-audio-track-radius:  0 !default;
+$ionic-audio-track-radius:  4px !default;
 $ionic-audio-track-border:  0 !default; //1px solid #010101;
 $ionic-audio-track-color:   color($colors, dark) !default;
 $ionic-audio-track-focus-color:   color($colors, secondary) !default;
@@ -97,12 +97,6 @@ audio-track-progress-bar {
     }
     &.range-md {
         padding: 0;
-    }
-  }
-
-  .progress-outer {
-    width: 100%;
-    .progress-inner {
     }
   }
 

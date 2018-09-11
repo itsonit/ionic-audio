@@ -59,11 +59,7 @@ export class AudioTrackProgressComponent {
   selector: "audio-track-progress-bar",
   template: `
     <time *ngIf="_showProgress"><span *ngIf="audioTrack" [style.opacity]="audioTrack.duration > 0 ? 1 : 0">{{audioTrack.progress | audioTime}}</span></time>
-    <div class="progress-outer">
-      <div class="progress-inner" [style.width]="audioTrack ? audioTrack.progress + '%' : 0 + '%'">
-      </div>
-    </div>
-    <input type="range" #seeker min="0" [max]="audioTrack ? audioTrack.duration : 0" step="any" [value]="audioTrack ? audioTrack.progress : 0" (change)="seekTo(seeker.value)" (touchstart)="touchstart($event)" (touchend)="touchend($event)">
+    <ion-range type="range" #seeker min="0" [max]="audioTrack ? audioTrack.duration : 0" step="any" [value]="audioTrack ? audioTrack.progress : 0" (change)="seekTo(seeker.value)" (touchstart)="touchstart($event)" (touchend)="touchend($event)"></ion-range>
     <time *ngIf="_showDuration"><span *ngIf="audioTrack" [style.opacity]="audioTrack.duration > 0 ? 1 : 0">{{audioTrack.duration | audioTime}}</span></time>
     `
 })
