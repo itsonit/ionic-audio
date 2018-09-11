@@ -348,7 +348,7 @@ var CordovaAudioTrack = (function () {
      */
     function (time) {
         // Cordova Media reports duration and progress as seconds, so we need to multiply by 1000
-        this.audio.seekTo(Math.round(time * 1000));
+        this.audio.seekTo(time * 1000);
     };
     /**
      * Releases audio resources
