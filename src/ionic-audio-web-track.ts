@@ -32,7 +32,7 @@ export class WebAudioTrack implements IAudioTrack {
   }
 
   private createAudio() {
-    if(this.audio !== null) {
+    if(this.audio == null) {
       this.audio = new Audio();
     }
     this.audio.src = this.src;
