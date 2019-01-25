@@ -16,6 +16,7 @@ var WebAudioTrack = (function () {
         // this.ctx = this.ctx || new AudioContext();
         this.src = src;
         this.preload = preload;
+        this.audio = null;
         this.isPlaying = false;
         this.isFinished = false;
         this._progress = 0;
@@ -24,7 +25,9 @@ var WebAudioTrack = (function () {
     }
     WebAudioTrack.prototype.createAudio = function () {
         var _this = this;
-        this.audio = new Audio();
+        if (this.audio !== null) {
+            this.audio = new Audio();
+        }
         this.audio.src = this.src;
         this.audio.preload = this.preload;
         //this.audio.controls = true;
@@ -360,8 +363,8 @@ var WebAudioTrack = (function () {
        * @method destroy
        */
     function () {
-        this.audio = undefined;
-        console.log("Released track " + this.src);
+        //this.audio = undefined;
+        //console.log(`Released track ${this.src}`);
     };
     WebAudioTrack.decorators = [
         { type: Injectable },
