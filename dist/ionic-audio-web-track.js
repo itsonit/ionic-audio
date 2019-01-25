@@ -25,7 +25,7 @@ var WebAudioTrack = (function () {
     }
     WebAudioTrack.prototype.createAudio = function () {
         var _this = this;
-        if (this.audio !== null) {
+        if (this.audio == null) {
             this.audio = new Audio();
         }
         this.audio.src = this.src;
