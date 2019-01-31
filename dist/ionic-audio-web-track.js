@@ -9,28 +9,33 @@ window.AudioContext = window['AudioContext'] || window['webkitAudioContext'];
  * @implements {IAudioTrack}
  */
 var WebAudioTrack = (function () {
-    function WebAudioTrack(src, preload) {
-        if (preload === void 0) { preload = 'none'; }
-        // audio context not needed for now
-        // @Optional() private ctx: AudioContext = undefined
-        // this.ctx = this.ctx || new AudioContext();
+    function WebAudioTrack(src, preload, extId) {
+        if (extId === void 0) { extId = 0; }
         this.src = src;
         this.preload = preload;
+        this.extId = extId;
         this.audio = null;
         this.isPlaying = false;
         this.isFinished = false;
         this._progress = 0;
         this._completed = 0;
+        // audio context not needed for now
+        // @Optional() private ctx: AudioContext = undefined
+        // this.ctx = this.ctx || new AudioContext();
+        this._extId = extId;
         this.createAudio();
     }
     WebAudioTrack.prototype.createAudio = function () {
         var _this = this;
         if (!("audiosingelton" in window)) {
-            this.audio = new Audio();
-            window.audiosingelton = this.audio;
+            window.audiosingelton = {};
+        }
+        if (this._extId in window.audiosingelton) {
+            this.audio = window.audiosingelton[this._extId];
         }
         else {
-            this.audio = window.audiosingelton;
+            this.audio = new Audio();
+            window.audiosingelton[this._extId] = this.audio;
         }
         this.audio.src = this.src;
         this.audio.preload = this.preload;
@@ -375,6 +380,7 @@ var WebAudioTrack = (function () {
     ];
     /** @nocollapse */
     WebAudioTrack.ctorParameters = function () { return [
+        null,
         null,
         { type: undefined, decorators: [{ type: Optional },] },
     ]; };

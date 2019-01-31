@@ -9,7 +9,8 @@ import { IAudioTrack } from './ionic-audio-interfaces';
  */
 export declare class WebAudioTrack implements IAudioTrack {
     src: string;
-    preload: string;
+    preload: any;
+    extId: number;
     private audio;
     isPlaying: boolean;
     isFinished: boolean;
@@ -17,9 +18,10 @@ export declare class WebAudioTrack implements IAudioTrack {
     private _completed;
     private _duration;
     private _id;
+    private _extId;
     private _isLoading;
     private _hasLoaded;
-    constructor(src: string, preload?: string);
+    constructor(src: string, preload: any, extId?: number);
     private createAudio();
     private onTimeUpdate(e);
     static formatTime(value: number): string;

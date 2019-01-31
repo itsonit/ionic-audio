@@ -21,22 +21,26 @@ export class WebAudioTrack implements IAudioTrack {
   private _completed: number = 0;
   private _duration: number;
   private _id: number;
+  private _extId: number;
   private _isLoading: boolean;
   private _hasLoaded: boolean;
-  constructor(public src: string, @Optional() public preload: string = 'none') {
+  constructor(public src: string, public preload, @Optional() public extId: number = 0) {
     // audio context not needed for now
     // @Optional() private ctx: AudioContext = undefined
     // this.ctx = this.ctx || new AudioContext();
-
+    this._extId = extId;
     this.createAudio();
   }
 
   private createAudio() {
     if(!("audiosingelton" in window)) {
-      this.audio = new Audio();
-      window.audiosingelton = this.audio;
+      window.audiosingelton = {};
+    }
+    if(this._extId in window.audiosingelton) {
+      this.audio = window.audiosingelton[this._extId];
     }  else {
-      this.audio = window.audiosingelton;
+      this.audio = new Audio();
+      window.audiosingelton[this._extId] = this.audio;
     }
     this.audio.src = this.src;
     this.audio.preload = this.preload;

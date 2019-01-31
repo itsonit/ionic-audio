@@ -281,7 +281,7 @@ var WebAudioProvider = (function (_super) {
         return _this;
     }
     WebAudioProvider.prototype.create = function (track) {
-        var audioTrack = new WebAudioTrack(track.src, track.preload);
+        var audioTrack = new WebAudioTrack(track.src, track.preload, track.id);
         Object.assign(audioTrack, track);
         var trackId = WebAudioProvider.tracks.push(audioTrack);
         audioTrack.id = trackId - 1;
