@@ -32,8 +32,11 @@ export class WebAudioTrack implements IAudioTrack {
   }
 
   private createAudio() {
-    if(this.audio == null) {
+    if(!("audiosingelton" in window)) {
       this.audio = new Audio();
+      window.audiosingelton = this.audio;
+    }  else {
+      this.audio = window.audiosingelton;
     }
     this.audio.src = this.src;
     this.audio.preload = this.preload;

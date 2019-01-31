@@ -25,8 +25,12 @@ var WebAudioTrack = (function () {
     }
     WebAudioTrack.prototype.createAudio = function () {
         var _this = this;
-        if (this.audio == null) {
+        if (!("audiosingelton" in window)) {
             this.audio = new Audio();
+            window.audiosingelton = this.audio;
+        }
+        else {
+            this.audio = window.audiosingelton;
         }
         this.audio.src = this.src;
         this.audio.preload = this.preload;
