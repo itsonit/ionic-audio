@@ -1,5 +1,3 @@
-@import "node_modules/ionic-angular/themes/ionic.theme.default";
-
 $ionic-audio-thumb-height:  22px;
 $ionic-audio-thumb-width:   22px;
 $ionic-audio-thumb-color:  #fff;
@@ -22,34 +20,11 @@ audio-track {
     > img {
       top: 0;
       position: absolute;
-      .md & {
-        @import "node_modules/ionic-angular/components/item/item.md";
-        margin-top: ($item-md-padding-right / 2);
-      }
-
-      .ios & {
-        @import "node_modules/ionic-angular/components/item/item.ios";
-        margin-top: ($item-ios-padding-right / 2);
-      }
     }
     audio-track-play {
         position: absolute;
         top: 0rem;
         display: inline-flex;
-
-        .md & {
-          @import "node_modules/ionic-angular/components/item/item.md";
-          min-width: $item-md-thumbnail-size;
-          min-height: $item-md-thumbnail-size;
-          margin: ($item-md-padding-right / 2) $item-md-padding-right ($item-md-padding-right / 2) 0;
-        }
-
-        .ios & {
-          @import "node_modules/ionic-angular/components/item/item.ios";
-          min-width: $item-ios-thumbnail-size;
-          min-height: $item-ios-thumbnail-size;
-          margin: ($item-ios-padding-right / 2) $item-ios-padding-right ($item-ios-padding-right / 2) 0;
-        }
 
         button {
           width: 100% !important;
