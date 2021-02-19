@@ -2,18 +2,18 @@
 
 $ionic-audio-thumb-height:  22px;
 $ionic-audio-thumb-width:   22px;
-$ionic-audio-thumb-color:  #00AEEF;
-$ionic-audio-thumb-focus-color:   #fff;
+$ionic-audio-thumb-color:  #f3e8d5;
+$ionic-audio-thumb-focus-color:   #554137;
 $ionic-audio-thumb-shadow:  (2.2px 2.2px 8.9px #333333, 0px 0px 2.2px #404040) !default;
-$ionic-audio-thumb-border:  1px solid #fff;
+$ionic-audio-thumb-border:  1px solid #554137;
 $ionic-audio-thumb-radius:  100%;
 
 $ionic-audio-track-height:  2px !default;
 $ionic-audio-track-margin:  $ionic-audio-thumb-height/2 !default;
 $ionic-audio-track-radius:  1px !default;
 $ionic-audio-track-border:  0 !default; //1px solid #010101;
-$ionic-audio-track-color:   #fff !default;
-$ionic-audio-track-focus-color:   #fff !default;
+$ionic-audio-track-color:   #554137 !default;
+$ionic-audio-track-focus-color:   #554137 !default;
 $ionic-audio-track-shadow:  none !default; //1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
 
 audio-track {
